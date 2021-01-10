@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Car Price Prediction</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+      html, body {
+      min-height: 100%;
+      }
+      body, div, form, input, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+      }
+      h1 {
+      font-weight: 400;
+      }
+      h4 {
+      margin: 22px 0 4px;
+      color: #095484;
+      }
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 3px;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 2px 5px #ccc; 
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      vertical-align: middle;
+      }
+      input:hover {
+      outline: none;
+      border: 1px solid #095484;
+      }
+      .brand-name {
+      margin-bottom: 22px;
+      }
+      span {
+      color: red;
+      }
+      th, td {
+      width: 21%;
+      padding: 15px 0;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+      vertical-align: unset;
+      line-height: 18px;
+      font-weight: 400;
+      word-break: break-all;
+      }
+      .first-col {
+      width: 16%;
+      text-align: left;
+      }
+      table {
+      width: 100%;
+      }
+
+      .btn-block {
+      margin-top: 20px;
+      text-align: center;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      -webkit-border-radius: 5px; 
+      -moz-border-radius: 5px; 
+      border-radius: 5px; 
+      background-color: #095484;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background-color: #0666a3;
+      }
+      @media (min-width: 568px) {
+      th, td {
+      word-break: keep-all;
+      }
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <div class="col col-lg-2">
+          
+        </div>
+        <div class="col-md-auto">
+          <div class="testbox">
+            <form action="{{url_for('predict')}}", method="POST">
+              <h1>Online Car Price Prediction</h1>
+              <p>Please provide all the details of your car for better result.</p>
+              <h4>Brand Name</h4>
+              <input class="brand-name" type="text" required="required" name = "brand", id="brand" placeholder="Ford" /> 
+              <h4>Car Name</h4>
+              <input class="car-name" type="text" required="required" name="car" placeholder="Alto" />
+              <h4>Model Year</h4>
+              <input class="model-year" type="text" required="required" name="model" placeholder="2021" />
+      
+              <h4>Number of owner</h4>
+              <select name="owner" required="required">
+                <option value="one">1</option>
+                <option value="two">2</option>
+                <option value="three">3</option>
+                <option value="four">4 & above</option>
+            </select>
+              
+              <h4>Transmission Type</h4>
+              <select name="transmission" required="required">
+                <option value="manual">Manual</option>
+                <option value="automatic">Automatic</option>
+            </select>
+              
+              <h4>Fuel Type</h4>
+              <select name="fuel" required="required">
+                <option value="petrol">Petrol  </option>
+                <option value="diesel">Diesel  </option>
+                <option value="cng">CNG</option>
+                <option value="lpg">LPG</option>
+                <option value="electric">Electric</option>
+              </select>
+      
+              <h4>KM Driven</h4>
+              <input class="model-year" type="text" required="required" name="driven" placeholder="15000" />
+              <h4>No of Seats</h4>
+              <input class="model-year" type="text" required="required" name="seats" placeholder="5" />
+              <h4>Fuel Economy</h4>
+              <input type="text", name="economy" required="required" placeholder="18.5" />
+              
+              <h4>Engine(cc)</h4>
+              <input name="engine" type="text" required="required" placeholder="1200" />
+              
+              <h4>Power(bhp)</h4>
+              <input name="power" type="text" required="required" placeholder="160" />
+      
+              <div class="btn-block">
+                <button type="submit" href="/">Predict Price</button>
+                <button type="text" placeholder="0 Lakh">{{ CarPrice }}</button>
+              </div>
+              <!-- <div><p>{{ CarPrice }}</p></div> -->
+            </form>
+          </div>
+        </div>
+        <div class="col col-lg-2">
+          
+        </div>
+      </div>
+    </div>
+
+
+    
+  </body>
+</html>
