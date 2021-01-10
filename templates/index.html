@@ -98,71 +98,59 @@
   </head>
   <body>
 
-    <div class="container">
-      <div class="row justify-content-md-center">
-        <div class="col col-lg-2">
-          
+    <div class="testbox">
+      <form action="{{url_for('predict')}}", method="POST">
+        <h1>Online Car Price Prediction</h1>
+        <p>Please provide all the details of your car for better result.</p>
+        <h4>Brand Name</h4>
+        <input class="brand-name" type="text" required="required" name = "brand", id="brand" placeholder="Ford" /> 
+        <h4>Car Name</h4>
+        <input class="car-name" type="text" required="required" name="car" placeholder="Alto" />
+        <h4>Model Year</h4>
+        <input class="model-year" type="text" required="required" name="model" placeholder="2021" />
+
+        <h4>Number of owner</h4>
+        <select name="owner" required="required">
+          <option value="one">1</option>
+          <option value="two">2</option>
+          <option value="three">3</option>
+          <option value="four">4 & above</option>
+      </select>
+        
+        <h4>Transmission Type</h4>
+        <select name="transmission" required="required">
+          <option value="manual">Manual</option>
+          <option value="automatic">Automatic</option>
+      </select>
+        
+        <h4>Fuel Type</h4>
+        <select name="fuel" required="required">
+          <option value="petrol">Petrol  </option>
+          <option value="diesel">Diesel  </option>
+          <option value="cng">CNG</option>
+          <option value="lpg">LPG</option>
+          <option value="electric">Electric</option>
+        </select>
+
+        <h4>KM Driven</h4>
+        <input class="model-year" type="text" required="required" name="driven" placeholder="15000" />
+        <h4>No of Seats</h4>
+        <input class="model-year" type="text" required="required" name="seats" placeholder="5" />
+        <h4>Fuel Economy</h4>
+        <input type="text", name="economy" required="required" placeholder="18.5" />
+        
+        <h4>Engine(cc)</h4>
+        <input name="engine" type="text" required="required" placeholder="1200" />
+        
+        <h4>Power(bhp)</h4>
+        <input name="power" type="text" required="required" placeholder="160" />
+
+        <div class="btn-block">
+          <button type="submit" href="/">Predict Price</button>
+          <button type="text" placeholder="0 Lakh">{{ CarPrice }}</button>
         </div>
-        <div class="col-md-auto">
-          <div class="testbox">
-            <form action="{{url_for('predict')}}", method="POST">
-              <h1>Online Car Price Prediction</h1>
-              <p>Please provide all the details of your car for better result.</p>
-              <h4>Brand Name</h4>
-              <input class="brand-name" type="text" required="required" name = "brand", id="brand" placeholder="Ford" /> 
-              <h4>Car Name</h4>
-              <input class="car-name" type="text" required="required" name="car" placeholder="Alto" />
-              <h4>Model Year</h4>
-              <input class="model-year" type="text" required="required" name="model" placeholder="2021" />
-      
-              <h4>Number of owner</h4>
-              <select name="owner" required="required">
-                <option value="one">1</option>
-                <option value="two">2</option>
-                <option value="three">3</option>
-                <option value="four">4 & above</option>
-            </select>
-              
-              <h4>Transmission Type</h4>
-              <select name="transmission" required="required">
-                <option value="manual">Manual</option>
-                <option value="automatic">Automatic</option>
-            </select>
-              
-              <h4>Fuel Type</h4>
-              <select name="fuel" required="required">
-                <option value="petrol">Petrol  </option>
-                <option value="diesel">Diesel  </option>
-                <option value="cng">CNG</option>
-                <option value="lpg">LPG</option>
-                <option value="electric">Electric</option>
-              </select>
-      
-              <h4>KM Driven</h4>
-              <input class="model-year" type="text" required="required" name="driven" placeholder="15000" />
-              <h4>No of Seats</h4>
-              <input class="model-year" type="text" required="required" name="seats" placeholder="5" />
-              <h4>Fuel Economy</h4>
-              <input type="text", name="economy" required="required" placeholder="18.5" />
-              
-              <h4>Engine(cc)</h4>
-              <input name="engine" type="text" required="required" placeholder="1200" />
-              
-              <h4>Power(bhp)</h4>
-              <input name="power" type="text" required="required" placeholder="160" />
-      
-              <div class="btn-block">
-                <button type="submit" href="/">Predict Price</button>
-                <button type="text" placeholder="0 Lakh">{{ CarPrice }}</button>
-              </div>
-              <!-- <div><p>{{ CarPrice }}</p></div> -->
-            </form>
-          </div>
-        </div>
-        <div class="col col-lg-2">
-          
-        </div>
-      </div>
+        <!-- <div><p>{{ CarPrice }}</p></div> -->
+      </form>
     </div>
 
 
